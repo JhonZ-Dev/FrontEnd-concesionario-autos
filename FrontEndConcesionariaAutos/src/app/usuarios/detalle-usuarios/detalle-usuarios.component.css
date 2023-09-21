@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-image: url('https://gossipvehiculo.com/wp-content/uploads/2023/06/MEJORES-CARROS-4-CILINDROS.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+
+  .btn.btn-primary {
+    margin-left: 15px;
+  }
+
+  h1{
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: #000000;
+  }
+  .texto{
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    margin-left: 250px;
+    border-radius: 50px;
+  }
+
+  h1:hover{
+    color: black;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+  }
+  .texto:hover{
+    background-color: rgb(228, 212, 212);
+    width: 50%;
+    margin-left: 250px;
+    border-radius: 50px;
+
+  }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ 
+  <title>Document</title>
+</head>
+<body>
+  
+  <div class="container">
+  <div class="texto">
+    <h1>Detalle Usuarios</h1>
+  </div>
+  <table class="table table-boreded" style="background-color: aliceblue; border-radius: 5px;">
+    <thead>
+      <tr >
+        <th>Identificación</th>
+        <th>Nombre</th>
+        <th>Telefono</th>
+        <th>Direccion</th>
+        <th>Edad</th>
+        <th>Ciudad</th>
+        <th>Correo</th>
+        <th>Actualizar</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuarios of usuarioDetails">
+        <td>{{ usuarios.identificacion }}</td>
+        <td>{{ usuarios.nombre }} {{ usuarios.apellido }}</td>
+        <td>{{ usuarios.telefono}}</td>
+        <td>{{ usuarios.direccion}}</td>
+        <td>{{ usuarios.edad}}</td>
+        <td>{{ usuarios.ciudad_residencia}}</td>
+        <td>{{ usuarios.correo }}</td>
+        <!-- Agrega un enlace con la identificación en la URL -->
+        <td>
+          <button class="btn btn-primary" [routerLink]="['/actualizar', usuarios.identificacion]">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+        </td>
+        
+    <!-- <td><a [routerLink]="['/actualizar', usuarios.identificacion]"><i class="fa fa-pencil" aria-hidden="true"></i></a></td> -->
+
+    <td><button type="button" name="button" class="btn btn-danger" (click)="delete(usuarios)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+   
+
+
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+  
+</body>
+</html>

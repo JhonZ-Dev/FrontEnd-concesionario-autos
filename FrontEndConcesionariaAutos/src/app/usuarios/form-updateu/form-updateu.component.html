@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.min.css">
+
+
+    <title>Editar Usuario</title>
+</head>
+<body>
+
+
+    <div class="form-container">
+      <div class="texto-center"><h1>Actualizar Usuario</h1></div>
+      
+         
+            <form *ngIf="usuario" (ngSubmit)="update()" >
+              <div class="mb-3" >
+                <label for="nombre" class="form-label"><i class="fa fa-user"></i> Nombre</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="usuario.nombre">
+                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="apellido" class="form-label"><i class="fa fa-user"></i> Apellido</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="usuario.apellido">
+                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label"><i class="fa fa-phone"></i> Teléfono</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="usuario.telefono">
+                  <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="direccion" class="form-label"><i class="fa fa-map-marker"></i> Dirección</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="usuario.direccion">
+                  <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="edad" class="form-label"><i class="fa fa-calendar"></i> Edad</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="edad" name="edad" [(ngModel)]="usuario.edad">
+                  <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="identificacion" class="form-label"><i class="fa fa-id-card"></i> Identificación</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="identificacion" name="identificacion" [(ngModel)]="usuario.identificacion" disabled="true">
+                  <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="ciudad_residencia" class="form-label"><i class="fa fa-home"></i> Ciudad Residencia</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="ciudad_residencia" name="ciudad_residencia" [(ngModel)]="usuario.ciudad_residencia">
+                  <span class="input-group-text"><i class="fa fa-home"></i></span>
+                </div>
+              </div>
+            
+              
+              <div class="text-center">      
+                
+                  <button role="button" (click)="update()" type="submit" class="btn btn-primary">Actualizar Usuario</button>
+             
+              </div>
+            </form>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.min.js"></script>
+
+      
+      </div>
+      
+    
+      <script>
+        function mostrarSweetAlert(event) {
+    event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+    // Valida todos los campos requeridos
+    var nombre = document.getElementById("nombre").value;
+
+    if(nombre.trim()=== "" )
+    {
+      // Muestra un SweetAlert de error si algún campo está vacío
+      Swal.fire({
+        title: "Error",
+        text: "Por favor, complete todos los campos.",
+        icon: "error",
+        confirmButtonText: "Aceptar"
+      });
+      return; // Detiene el envío del formulario
+    }
+
+    }
+        
+
+      </script>
+</body>
+</html>
