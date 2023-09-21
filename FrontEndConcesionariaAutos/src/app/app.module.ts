@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { VentasComponent } from './ventas/ventas.component';
 import { VerModelosComponent } from './ver-modelos/ver-modelos.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsuariosComponent,
     VentasComponent,
-    VerModelosComponent
+    VerModelosComponent,
+    StatisticsComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
