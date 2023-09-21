@@ -9,6 +9,7 @@ import { VentasComponent } from './ventas/ventas.component';
 import { VerModelosComponent } from './ver-modelos/ver-modelos.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { BodyComponent } from './body/body.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     VentasComponent,
     VerModelosComponent,
     StatisticsComponent,
-    SidenavComponent
+    SidenavComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,
