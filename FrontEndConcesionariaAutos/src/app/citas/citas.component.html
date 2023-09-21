@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="form-container">
+    <div class="text-center">
+      <h1>Añadir Cita</h1>
+    </div>
+    <form (ngSubmit)="agregarCita()" #ventaForm="ngForm">
+      <div class="mb-3">
+        <label for="fecha_estimada"><i class="fa fa-calendar"></i> Fecha:</label>
+        <div class="input-group">
+          <input type="date" id="fecha_estimada" name="fecha_estimada" required [(ngModel)]="nuevaCita.fecha_estimada"
+            (change)="validarFechaFutura()" />
+          <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="hora_estimada"><i class="fa fa-clock"></i> Hora:</label>
+        <div class="input-group">
+          <input type="time" id="hora_estimada" name="hora_estimada" required [(ngModel)]="nuevaCita.hora_estimada" />
+          <span class="input-group-text"><i class="fa fa-clock"></i></span>
+        </div>
+      </div>
+
+      <label for="descripcion"><i class="fas fa-commenting-o"></i> Descripcion de cita:</label>
+      <textarea name="descripcion" id="descripcion" cols="10" rows="5" required [(ngModel)]="nuevaCita.descripcion"
+        (input)="countCharacters()"></textarea>
+      <div>{{ characterCount }}/80 caracteres <i class="fa fa-text-width" aria-hidden="true"></i>
+      </div>
+
+
+      <div class="mb-3">
+        <label for="correo"><i class="fas fa-envelope" aria-hidden="true"></i>
+          Correo:</label>
+        <div class="input-group">
+          <input type="email" id="correo" name="correo" required [(ngModel)]="nuevaCita.correo" />
+          <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="identificacion"><i class="fas fa-id-card" aria-hidden="true"></i> Cedula Usuario</label>
+        <div class="input-group">
+          <input type="number" id="identificacion" name="identificacion" required
+            [(ngModel)]="nuevaCita.identificacion" />
+          <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+
+        </div>
+      </div>
+      <button type="submit"><i class="fas fa-plus"></i> Agregar Cita</button>
+    </form>
+  </div>
+
+</body>
+
+</html>

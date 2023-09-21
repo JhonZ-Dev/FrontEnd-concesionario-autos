@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="texto"><h1>Detalle Cita</h1></div>
+    <table class="table" style="background-color: aliceblue; border-radius: 5px;">
+      <thead>
+        <tr>
+          <th>Identificador Cita</th>
+          <th>Identificacion</th>
+          <th>Nombre Usuario</th>
+          <th>Correo Usuario</th>
+          <th>Descripcion</th>
+          <th>Hora Estimada</th>
+          <th>Fecha Estimada</th>
+          <th>Actualizar</th>
+          <th>Eliminar</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let citas of detalleCita">
+          <td>{{ citas.idcitas }}</td>
+          <td>{{ citas.identificacionUsuario }}</td>
+          <td>{{ citas.nombreUsuario }}</td>
+          <td>{{ citas.correoUsuario }}</td>
+          <td>{{ citas.descripcion}}</td>
+          <td>{{ citas.horaEstimada}}</td>
+          <td>{{ citas.fechaEstimada}}</td>
+          <td>
+            <button class="btn btn-primary" [routerLink]="['/form-cita', citas.idcitas]"> <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
+          </td>
+          <td><button type="button" name="button" class="btn btn-danger" (click)="delete(citas)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+  
+        </tr>
+        
+  
+      </tbody>
+    </table>
+    
+  </div>
+  
+</body>
+</html>

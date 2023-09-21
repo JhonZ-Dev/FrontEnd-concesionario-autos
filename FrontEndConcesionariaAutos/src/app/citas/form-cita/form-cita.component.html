@@ -1,0 +1,57 @@
+<body>
+  <div *ngIf="cita" class="form-container">
+    <h2>Formulario Editar Citas</h2>
+
+    <form>
+      <div class="form-group">
+        <label for="identificacionUsuario" class="form-label"><i class="fa fa-user"></i> Identificacion Usuario</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="identificacionUsuario" name="identificacionUsuario" [(ngModel)]="cita.identificacionUsuario" disabled>
+          <span class="input-group-text"><i class="fa fa-user"></i></span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="nombreUsuario" class="form-label"><i class="fa fa-user"></i> Nombre Usuario</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" [(ngModel)]="cita.nombreUsuario" disabled>
+          <span class="input-group-text"><i class="fa fa-user"></i></span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="correo" class="form-label"><i class="fa fa-envelope"></i> Correo Usuario</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="correo" name="correo" [(ngModel)]="cita.correo">
+          <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="descripcion" class="form-label"><i class="fa fa-list-alt"></i> Descripcion</label>
+        <div class="input-group">
+          <textarea name="descripcion" id="descripcion" cols="35" rows="5" required [(ngModel)]="cita.descripcion"
+          (input)="countCharacters()"></textarea>
+          <div>{{ characterCount }}/80 caracteres</div>
+          <span class="input-group-text"><i class="fa fa-list-alt" aria-hidden="true"></i>
+          </span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="hora_estimada" class="form-label"><i class="fa fa-clock"></i> Hora Estimada</label>
+        <div class="input-group">
+          <input type="time" class="form-control" id="hora_estimada" name="hora_estimada" [(ngModel)]="cita.hora_estimada">
+          <span class="input-group-text"><i class="fa fa-clock" aria-hidden="true"></i>
+          </span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="fecha_estimada" class="form-label"><i class="fa fa-calendar"></i> Fecha Estimada</label>
+        <div class="input-group">
+          <input type="date" class="form-control" id="fecha_estimada" name="fecha_estimada" [(ngModel)]="cita.fecha_estimada"  (change)="validarFechaFutura()">
+          <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i>
+          </span>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="actualizarCita()">Actualizar  <i class="fa fa-pencil" aria-hidden="true"></i></button>
+    </form>
+  </div>
+  
+</body>
