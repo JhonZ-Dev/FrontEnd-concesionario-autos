@@ -1,1 +1,62 @@
-<p>ventas works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="form-container">
+    <div class="text-center">
+      <h1>Añadir Venta Autos - Clientes</h1>
+    </div>
+    <form (ngSubmit)="agregarVenta()" #ventaForm="ngForm">
+
+      <div class="mb-3">
+        <label for="identificacion" class="form-label"><i class="fa fa-user"></i> Cédula Usuario</label>
+        <div class="input-group">
+          <input type="number" id="identificacion" name="identificacion" required
+            [(ngModel)]="nuevaVenta.identificacion" class="form-control" />
+          <span class="input-group-text"><i class="fa fa-user"></i></span>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="placa" class="form-label"><i class="fa fa-car"></i> Placa</label>
+        <div class="input-group">
+          <input type="text" id="placa" name="placa" required [(ngModel)]="nuevaVenta.placa" class="form-control" />
+          <span class="input-group-text"><i class="fa fa-car"></i></span>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="precio" class="form-label"><i class="fa fa-usd"></i> Precio</label>
+        <div class="input-group">
+          <input type="number" id="precio" name="precio" required [(ngModel)]="nuevaVenta.precio"
+            class="form-control" />
+          <span class="input-group-text"><i class="fa fa-money" aria-hidden="true"></i></span>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="fecha_venta" class="form-label" ><i class="fa fa-calendar"></i> Fecha de venta</label>
+        <div class="input-group">
+          <input type="date" id="fecha_venta" name="fecha_venta" required [(ngModel)]="nuevaVenta.fecha_venta"
+            class="form-control" />
+          <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Agregar Venta <i class="fa fa-check"></i></button>
+    </form>
+  </div>
+
+
+</body>
+
+</html>

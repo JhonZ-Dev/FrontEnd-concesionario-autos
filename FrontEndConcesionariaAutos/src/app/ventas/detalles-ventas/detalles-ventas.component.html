@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="texto"><h1>Detalle Venta</h1></div>
+    <table class="table table-boreded" style="background-color: aliceblue; border-radius: 5px;">
+      <thead>
+        <tr>
+          <th>ID Ventas</th>
+          <th>Fecha Venta</th>
+          <th>Precio</th>
+          <th>Usuario</th>
+          <th>Placa</th>
+          <th>Modelo Auto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let venta of detalleVentas">
+          <td>{{ venta.id_ventas }}</td>
+          <td>{{ venta.fechaVenta }}</td>
+          <td>{{ venta.precio }}</td>
+          <td>{{ venta.usuario.nombre }} {{ venta.usuario.apellido }}</td>
+          <td>{{ venta.auto.placa }}</td>
+          <td>{{ venta.modelos.modelo }}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+  
+</body>
+</html>
