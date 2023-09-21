@@ -1,1 +1,84 @@
-<p>ver-modelos works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Aqui puedes agregar un modelo</h5>
+          <button class="btn btn-primary" (click)="mostrarFormularioParaModelo(modelo)">Mostrar Formulario</button>
+          <div *ngIf="mostrarFormulario && modelo === modeloSeleccionado" class="modal-container">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title">Formulario de Contacto</h2>
+                <button class="modal-close" (click)="mostrarFormulario = false">&times;</button>
+              </div>
+              <form (ngSubmit)="agregarModelo()">
+                <div class="mb-3">
+                  <label for="modelo" class="form-label"><i class="fa fa-phone"></i> Modelo</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="modelo" name="modelo" [(ngModel)]="modelo.modelo">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Aqui Puedes agregar una Marca</h5>
+          <button class="btn btn-primary" (click)="mostrarFormularioParaMarca(marca)">Mostrar Formulario</button>
+          <div *ngIf="mostrarFormularioMarca && marca === marcaSeleccionada" class="modal-container">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title">Formulario de Contacto</h2>
+                <button class="modal-close" (click)="mostrarFormularioMarca = false">&times;</button>
+              </div>
+              <form (ngSubmit)="agregarMarca()">
+                <div class="mb-3">
+                  <label for="marca" class="form-label"><i class="fa fa-phone"></i> marca</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="marca" name="marca" [(ngModel)]="marca.marca">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Aqui Puedes agregar una Color</h5>
+          <button class="btn btn-primary" (click)="mostrarFormularioParaColor(color)">Mostrar Formulario</button>
+          <div *ngIf="mostrarFormularioColor && color === colorSeleccionado" class="modal-container">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title">Formulario de Color</h2>
+                <button class="modal-close" (click)="mostrarFormularioColor = false">&times;</button>
+              </div>
+              <form (ngSubmit)="agregarColor()">
+                <div class="mb-3">
+                  <label for="color" class="form-label"><i class="fa fa-phone"></i> Color</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="color" name="color" [(ngModel)]="color.color">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
