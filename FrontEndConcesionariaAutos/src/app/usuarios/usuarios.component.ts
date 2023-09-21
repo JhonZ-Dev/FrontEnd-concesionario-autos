@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UsuarioService } from './usuario.service';
 import { Router } from '@angular/router';
 import { Usuario } from './usuario';
+import { AlertService } from '../alert.service';
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
