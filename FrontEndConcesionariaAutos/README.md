@@ -1,4 +1,8 @@
 # FrontEndConcesionariaAutos
+## Developers
+Jhon Zambrano - Backend-Frontend
+Angel Patiño - Backend-Frotend
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
 
