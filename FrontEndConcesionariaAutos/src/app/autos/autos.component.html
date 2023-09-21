@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.min.css">
+
+
+    <title>Insertar Auto</title>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <div class="text-center"><h1>Añadir Nuevo Auto</h1></div>
+        <form (ngSubmit)="guardarAuto()" id="formulario">
+            
+            <div class="mb-3">
+                <label for="modelo" class="form-label"><i class="fa fa-car"></i> Modelo</label><br>
+                <div class="input-group">
+                <select class="form-control" id="modelo" name="modelo" [(ngModel)]="autoSeleccionado.modelo">
+                    <option *ngFor="let modelo of modelos" [value]="modelo.modelo">
+                      {{ modelo.modelo }}
+                    </option>
+                  </select>
+                  <span class="input-group-text"><i class="fa fa-car" aria-hidden="true"></i></span>
+
+                </div>
+            </div>
+            <br>
+            <div class="mb-3">
+                <label for="marca" class="form-label"><i class="fa fa-car"></i> Marca</label>
+                <div class="input-group">
+                    <select class="form-control" id="marca" name="marca" [(ngModel)]="marcaSeleccionada.marca">
+        
+                        <option *ngFor="let marca of marcas" [value]="marca.marca">
+                          {{ marca.marca}}
+                        </option>
+                      </select>
+                      <span class="input-group-text"><i class="fa fa-car" aria-hidden="true"></i>
+                      </span>
+                      
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="anio" class="form-label"><i class="fa fa-calendar-o"></i> Año</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="anio" name="anio" [(ngModel)]="autos.anio" required maxlength="4" minlength="4">
+                    <span class="input-group-text"><i class="fa fa-calendar-o" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="color" class="form-label"><i class="fa fa-paint-brush"></i> Color</label><br>
+                <div class="input-group">
+                <select class="form-control" id="color" name="color" [(ngModel)]="colorSeleccionado.color">
+                    <option *ngFor="let color of colores" [value]="color.color">
+                      {{ color.color }}
+                    </option>
+                  </select>
+                  <span class="input-group-text"><i class="fa fa-paint-brush" aria-hidden="true"></i>
+                  </span>
+                </div>
+               
+            </div>
+            <div class="mb-3">
+                <label for="placa" class="form-label"><i class="fa fa-map-marker"></i> Placa</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="placa" name="placa" [(ngModel)]="autos.placa">
+                    <span class="input-group-text"><i class="fa fa-id-card" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+            
+
+            <div class="text-center">
+                <!-- <button role="button" (click)="create()" *ngIf="!usuario.id_usuario; else elseBlock" type="submit" class="btn btn-primary" >Registrar Auto</button> -->
+                <button role="button" type="submit" class="btn btn-primary">Registrar
+                    Auto</button>
+                
+            </div>
+        </form>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

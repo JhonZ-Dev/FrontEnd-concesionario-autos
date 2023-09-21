@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="form-container">
+
+    <div class="texto"><h1>Editar Auto</h1></div>
+  
+      <div *ngIf="auto">
+        <form>
+          <div class="mb-3">
+            <label for="placa" class="form-label"><i class="fa fa-id-card"></i> Placa</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="placa" name="placa" [(ngModel)]="auto.placa" disabled="true">
+              <span class="input-group-text"><i class="fa fa-id-card" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+      <div class="mb-3">
+        <label for="modelo" class="form-label"><i class="fa fa-car"></i> Modelo</label>
+          <div class="input-group">
+            <select [(ngModel)]="auto.modelo" name="modelo" id="modelo" class="form-control">
+              <option *ngFor="let modelo of modelos" [value]="modelo.modelo">
+                {{ modelo.modelo }}
+              </option>
+            </select>
+            <span class="input-group-text"><i class="fa fa-car"></i></span>
+          </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="marca" class="form-label"><i class="fa fa-car"></i> Marca</label>
+        <div class="input-group">
+          <select class="form-control" [(ngModel)]="auto.marca" name="marca" id="marca">
+            <option *ngFor="let marca of marcas" [value]="marca.marca">
+              {{ marca.marca}}
+            </option>
+          </select>
+          <span class="input-group-text"><i class="fa fa-car"></i></span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="anio" class="form-label"><i class="fa fa-calendar"></i> Año</label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="anio" name="anio" [(ngModel)]="auto.anio" required maxlength="4" minlength="4">
+            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+        </div>
+    </div>
+<!--       
+          <div class="form-group">
+            <label for="anio">Año:</label>
+            <input [(ngModel)]="auto.anio" name="anio" id="anio" required type="number" maxlength="4">
+          </div> -->
+          <div class="mb-3">
+            <label for="modelo" class="form-label"><i class="fa fa-paint-brush"></i> Color</label>
+            <div class="input-group">
+            <select class="form-control" id="color" name="color" [(ngModel)]="auto.color">
+                <option *ngFor="let color of colores" [value]="color.color">
+                  {{ color.color }}
+                </option>
+              </select>
+              <span class="input-group-text"><i class="fa fa-paint-brush"></i></span>
+
+            </div>
+              
+        </div>
+          <!-- <div class="form-group">
+            <label for="color">Color:</label>
+            <select [(ngModel)]="auto.color" name="color" id="color">
+              <option *ngFor="let color of colores" [value]="color.color">
+                {{ color.color }}
+              </option>
+            </select>
+          </div> -->
+      
+          <button class="btn-update" (click)="update()">Actualizar</button>
+        </form>
+      </div>
+      </div>
+
+  
+</body>
+</html>

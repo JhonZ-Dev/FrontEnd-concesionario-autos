@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="texto"><h1>Detalle Autos</h1></div>
+    <table class="table" style="background-color: aliceblue; border-radius: 5px;">
+      <thead>
+        <tr>
+          <th>Placa</th>
+          <th>Modelo</th>
+          <th>Marca</th>
+          <th>Año</th>
+          <th>Color</th>
+          <th>Actualizar</th>
+          <th>Editar</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let autos of autoDetalle">
+          <td>{{ autos.placa }}</td>
+          <td>{{ autos.modelo }}</td>
+          <td>{{ autos.marca}}</td>
+          <td>{{ autos.anio}}</td>
+          <td>{{ autos.color}}</td>
+  
+          <!-- Agrega un enlace con la identificación en la URL -->
+       <td>
+        <button class="btn btn-primary" [routerLink]="['/update-auto', autos.modelo]"> <i class="fa fa-pencil" aria-hidden="true"></i></button>
+      </td>
+      <td><button type="button" name="button" class="btn btn-danger" (click)="delete(autos)"><i class="fa fa-trash" aria-hidden="true"></i></button></td> 
+      
+  
+  
+  
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+
+  
+</body>
+</html>
